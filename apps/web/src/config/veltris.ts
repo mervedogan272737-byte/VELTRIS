@@ -15,9 +15,7 @@ export const VELTRIS_YAPILANDIRMASI = {
   },
 
   api: {
-    temelAdres:
-      process.env.NEXT_PUBLIC_VELTRIS_API_URL ??
-      "http://127.0.0.1:4000/api",
+    temelAdres: "/api",
     zamanAsimiMs: 15000,
   },
 
@@ -34,4 +32,3 @@ export const VELTRIS_YAPILANDIRMASI = {
     maksimumSayfaBoyutu: 100,
   },
 } as const;
-

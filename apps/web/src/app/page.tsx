@@ -6,6 +6,6 @@
 
 import { VELTRISUygulamasi } from "@/components/uygulama/VELTRISUygulamasi";
 
-export default function Home() {
+export default function Page() {
   return <VELTRISUygulamasi />;
 }

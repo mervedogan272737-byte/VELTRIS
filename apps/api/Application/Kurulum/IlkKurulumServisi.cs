@@ -102,11 +102,13 @@ public sealed class IlkKurulumServisi
         if (yoneticiRolu is null)
         {
             yoneticiRolu = new Rol
-            {
-                Id = Guid.NewGuid(),
-                Ad = "Yönetici",
-                Aktif = true
-            };
+{
+    Id = Guid.NewGuid(),
+    KurumId = kurum.Id,
+    Ad = "Yönetici",
+    Aktif = true,
+    SistemRolu = true
+};
 
             _db.Roller.Add(yoneticiRolu);
         }
@@ -192,3 +194,5 @@ public sealed class IlkKurulumServisi
                 _jwtAyarlari.Dakika));
     }
 }
+
+

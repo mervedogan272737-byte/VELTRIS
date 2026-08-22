@@ -8,23 +8,36 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Veltris.Api.Application.Kurulum;
 
-public sealed record IlkKurulumDurumuYaniti(
-    bool KurulumGerekli,
-    int KullaniciSayisi);
+public sealed class IlkKurulumDurumuYaniti
+{
+    public IlkKurulumDurumuYaniti(
+        bool kurulumGerekli,
+        int kullaniciSayisi)
+    {
+        KurulumGerekli = kurulumGerekli;
+        KullaniciSayisi = kullaniciSayisi;
+    }
 
-public sealed record IlkYoneticiOlusturmaIstegi(
-    [property: Required]
-    [property: MinLength(2)]
-    string Ad,
+    public bool KurulumGerekli { get; }
 
-    [property: Required]
-    [property: MinLength(2)]
-    string Soyad,
+    public int KullaniciSayisi { get; }
+}
 
-    [property: Required]
-    [property: EmailAddress]
-    string Eposta,
+public sealed class IlkYoneticiOlusturmaIstegi
+{
+    [Required]
+    [MinLength(2)]
+    public string Ad { get; set; } = string.Empty;
 
-    [property: Required]
-    [property: MinLength(12)]
-    string Sifre);
+    [Required]
+    [MinLength(2)]
+    public string Soyad { get; set; } = string.Empty;
+
+    [Required]
+    [EmailAddress]
+    public string Eposta { get; set; } = string.Empty;
+
+    [Required]
+    [MinLength(12)]
+    public string Sifre { get; set; } = string.Empty;
+}
