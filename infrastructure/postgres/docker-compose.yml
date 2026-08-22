@@ -1,0 +1,27 @@
+services:
+
+  postgres:
+    image: postgres:18
+    container_name: veltris-postgres
+    restart: unless-stopped
+
+    environment:
+      POSTGRES_DB: veltris
+      POSTGRES_USER: veltris
+      POSTGRES_PASSWORD: ${VELTRIS_POSTGRES_PASSWORD}
+
+    ports:
+      - "5432:5432"
+
+    volumes:
+      - veltris_postgres_data:/var/lib/postgresql
+
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U veltris -d veltris"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  veltris_postgres_data:
+

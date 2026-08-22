@@ -1,0 +1,21 @@
+
+# VELTRIS local secrets
+.env
+.env.*
+!.env.example
+**/appsettings.Development.json
+
+# .NET
+**/bin/
+**/obj/
+
+# Next.js
+**/.next/
+**/node_modules/
+
+# IDE
+.vscode/
+.idea/
+
+# Local backups
+/backups/

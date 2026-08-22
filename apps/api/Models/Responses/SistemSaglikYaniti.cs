@@ -1,0 +1,14 @@
+﻿/*
+ * VELTRIS — Sistem Sağlık Yanıt Modeli
+ * Geliştirici: Yazılım Uzmanı Merve Kılıç
+ * Copyright (c) 2026 Yazılım Uzmanı Merve Kılıç
+ */
+
+namespace Veltris.Api.Models.Responses;
+
+public sealed record SistemSaglikYaniti(
+    string Durum,
+    string Platform,
+    string Surum,
+    DateTime ZamanUtc
+);
